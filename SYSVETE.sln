@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYSVETE", "SYSVETE\SYSVETE.csproj", "{854FFAB1-B5CF-4AD4-8AD7-B936514A4BAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SYSVETE", "SYSVETE\SYSVETE.csproj", "{854FFAB1-B5CF-4AD4-8AD7-B936514A4BAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sysvete.Domain", "Sysvete.Domain", "{E3E19FE7-8667-43EC-B471-C68E3DDA68C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sysvete.Application", "Sysvete.Application", "{B56B07AA-2027-4294-AFD3-CBFE3C7AB570}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sysvete.Infrastructure", "Sysvete.Infrastructure", "{1C0F69E4-18CE-4247-B2ED-5050FB4AA3FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sysvete.WebApi", "Sysvete.WebApi", "{FF363FE8-502C-4AB8-A824-E366766AD0DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{36EB1D35-9334-4321-8EBF-F7C78CA69AE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

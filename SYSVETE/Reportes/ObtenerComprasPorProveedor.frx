@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/23/2023 16:03:38" ReportInfo.Modified="12/23/2023 16:17:53" ReportInfo.CreatorVersion="2024.1.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqJUrEa/KIcQqhhcfnlqC6PGg5imbaGg6zUaNTAYc5sc03TfePxSblja2w5ZBQ6XB2/+Rp10RZJ4YOvaZ8zHB1yr9oNvnasceregYGMryaakB1PBBrh/XhqCXcw9w8IJ9n+2hZqg1J77uCLmAIlJFKw+eF7PMM/WzsNbcOetuIcY7FL+vm3pP0q5lw+bT3kMHItPe23OW+1ai2Fonyk1F3YA==">
+      <ProcedureDataSource Name="ObtenerComprasPorProveedor" DataType="System.Int32" Enabled="true" TableName="ObtenerComprasPorProveedor" SelectCommand="ObtenerComprasPorProveedor">
+        <Column Name="IdCompra" DataType="System.Int32"/>
+        <Column Name="NroBoleta" DataType="System.String"/>
+        <Column Name="FechaCompra" DataType="System.DateTime"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Precio" DataType="System.Decimal"/>
+        <Column Name="Cantidad" DataType="System.Decimal"/>
+        <Column Name="Proveedor" DataType="System.String"/>
+        <ProcedureParameter Name="@IdProveedor" DataType="8" Expression="[IdProveedor]" Direction="Input"/>
+      </ProcedureDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="IdProveedor" DataType="System.Int32" Expression="1"/>
+    <Total Name="Total" Expression="[ObtenerComprasPorProveedor.Precio] * [ObtenerComprasPorProveedor.Cantidad]" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <TextObject Name="Text1" Top="9.45" Width="718.2" Height="37.8" Text="Compras por proveedor" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="60.91" Width="718.2" Height="66.15">
+      <TextObject Name="Text2" Left="9.45" Width="85.05" Height="18.9" Text="Proveedor:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text3" Left="103.95" Width="170.1" Height="18.9" Text="[ObtenerComprasPorProveedor.Proveedor]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Left="255.15" Top="47.25" Width="198.45" Height="18.9" Text="Descripcion" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="151.2" Top="47.25" Width="94.5" Height="18.9" Text="Fecha" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Top="47.25" Width="132.3" Height="18.9" Text="Nro Boleta" Font="Arial, 10pt"/>
+      <TextObject Name="Text11" Left="472.5" Top="47.25" Width="94.5" Height="18.9" Text="Precio" HorzAlign="Right" Font="Arial, 10pt"/>
+      <TextObject Name="Text13" Left="585.9" Top="47.25" Width="94.5" Height="18.9" Text="Cantidad" HorzAlign="Right" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="131.27" Width="718.2" Height="28.35" DataSource="ObtenerComprasPorProveedor">
+      <TextObject Name="Text4" Top="9.45" Width="132.3" Height="18.9" Text="[ObtenerComprasPorProveedor.NroBoleta]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="151.2" Top="9.45" Width="94.5" Height="18.9" Text="[ObtenerComprasPorProveedor.FechaCompra]" Format="Date" Format.Format="d" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="255.15" Top="9.45" Width="198.45" Height="18.9" CanGrow="true" Text="[ObtenerComprasPorProveedor.Descripcion]" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="472.5" Top="9.45" Width="94.5" Height="18.9" Text="[ObtenerComprasPorProveedor.Precio]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text12" Left="585.9" Top="9.45" Width="94.5" Height="18.9" Text="[ObtenerComprasPorProveedor.Cantidad]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="," Format.GroupSeparator="." Format.NegativePattern="1" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="163.83" Width="718.2" Height="28.35">
+      <TextObject Name="Text14" Left="529.2" Width="151.2" Height="18.9" Text="[Total]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </ColumnFooterBand>
+    <PageFooterBand Name="PageFooter1" Top="196.39" Width="718.2" Height="28.35"/>
+  </ReportPage>
+</Report>

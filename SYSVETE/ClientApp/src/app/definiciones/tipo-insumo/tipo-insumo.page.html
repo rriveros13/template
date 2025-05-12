@@ -1,0 +1,25 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Buscar ..."></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let tipo of tipoInsumos">
+      <ion-button routerLink="./editar-tipo-insumo/{{tipo.idTipoInsumo}}" slot="start" fill="clear">
+        <ion-icon slot="icon-only" name="build-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="confirmarEliminar(tipo)" slot="start" fill="clear" color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+      <ion-label>
+        <h3>{{tipo.descripcion}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button routerLink="./editar-tipo-insumo/0">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

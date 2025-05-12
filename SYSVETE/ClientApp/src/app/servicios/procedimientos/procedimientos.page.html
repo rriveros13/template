@@ -1,0 +1,24 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let proc of itemsFiltro | busqueda: termino: filtroProp">
+      <ion-button routerLink="./editar-procedimiento/{{proc.idProcedimiento}}" slot="start" fill="clear">
+        <ion-icon slot="icon-only" name="build-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="confirmarEliminar(proc)" slot="start" fill="clear" color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+      <ion-label>
+        <h3>{{proc.descripcion}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button routerLink="./editar-procedimiento/0">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

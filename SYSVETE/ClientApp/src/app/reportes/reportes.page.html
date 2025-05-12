@@ -1,0 +1,21 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of reportes; let i = index"
+               size-xs="12" size-sm="12" size-md="6" size-lg="4">
+        <ion-card button (click)="handleClick(i)">
+          <ion-card-header>
+            <ion-card-title>{{item.titulo}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{item.descripcion}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

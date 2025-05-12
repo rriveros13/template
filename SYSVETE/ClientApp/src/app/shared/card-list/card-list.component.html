@@ -1,0 +1,15 @@
+<ion-grid>
+  <ion-row>
+    <ion-col *ngFor="let item of menuOpciones"
+             size-xs="12" size-sm="12" size-md="6" size-lg="4">
+      <ion-card button [routerLink]="item.ruta">
+        <ion-card-header>
+          <ion-card-title>{{item.titulo}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          {{item.descripcion}}
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

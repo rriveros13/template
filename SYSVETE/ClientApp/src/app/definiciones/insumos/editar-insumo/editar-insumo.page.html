@@ -1,0 +1,68 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="editarGuardar()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Descripcion</ion-label>
+            <ion-input formControlName="descripcion" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Codigo</ion-label>
+            <ion-input formControlName="codigo" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Tipo Insumo</ion-label>
+            <ion-select formControlName="idTipoInsumo" okText="Aceptar" cancelText="Cancelar">
+              <ion-select-option *ngFor="let tipo of tipoInsumo" [value]="tipo.idTipoInsumo">{{tipo.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Presentacion</ion-label>
+            <ion-select formControlName="idPresentacion" okText="Aceptar" cancelText="Cancelar">
+              <ion-select-option *ngFor="let presentacion of presentaciones" [value]="presentacion.idPresentacion">{{presentacion.descripcion}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Impuesto</ion-label>
+            <ion-select formControlName="idImpuesto" okText="Aceptar" cancelText="Cancelar">
+              <ion-select-option *ngFor="let impuesto of impuestos" [value]="impuesto.idImpuesto">{{impuesto.descripcion}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-checkbox formControlName="activo" slot="start"></ion-checkbox>
+            <ion-label>Activo</ion-label>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+          <ion-button type="submit" expand="block">Aceptar</ion-button>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+          <ion-button (click)="cancelar()" expand="block" color="danger">Cancelar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

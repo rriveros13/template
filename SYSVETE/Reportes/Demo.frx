@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/22/2023 15:13:57" ReportInfo.Modified="12/22/2023 15:57:10" ReportInfo.CreatorVersion="2024.1.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqzP/32u1QtzIsUJqKG+Cmmlo7pj8Q52Yx+eSZcMnbMoVd/iWNbYoZlAA72u15YbC3Ls5F7nXiF8rJceoiIIZa3X/t1dYRFiLeNs5B3dQC+xKCcMH8P5cS1J39/4zZAjZgWAECaIGMDukln82jAqIApEJOJlxwxdS/3oRWYX+3hH0sMwVz6ZTZQc2S2tg00HU/QPC5TMM/XRm7RXZAf6Tswg==">
+      <TableDataSource Name="Rol" DataType="System.Int32" Enabled="true" TableName="Rol">
+        <Column Name="IdRol" DataType="System.Int32"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Codigo" DataType="System.Int32"/>
+        <Column Name="Activo" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Venta" DataType="System.Int32" Enabled="true" TableName="Venta">
+        <Column Name="IdVenta" DataType="System.Int32"/>
+        <Column Name="NroBoleta" DataType="System.Int32"/>
+        <Column Name="IdCliente" DataType="System.Int32"/>
+        <Column Name="FechaVenta" DataType="System.DateTime"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+        <Column Name="Facturado" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="Usuario" DataType="System.Int32" Enabled="true" TableName="Usuario">
+        <Column Name="IdUsuario" DataType="System.Int32"/>
+        <Column Name="IdRol" DataType="System.Int32"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="Alias" DataType="System.String"/>
+        <Column Name="Contrasena" DataType="System.String"/>
+        <Column Name="Activo" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Procedimiento" DataType="System.Int32" Enabled="true" TableName="Procedimiento">
+        <Column Name="IdProcedimiento" DataType="System.Int32"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+        <Column Name="costo" DataType="System.Decimal"/>
+      </TableDataSource>
+      <TableDataSource Name="Tratamiento" DataType="System.Int32" Enabled="true" TableName="Tratamiento">
+        <Column Name="idTratamiento" DataType="System.Int32"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+        <Column Name="costo" DataType="System.Decimal"/>
+      </TableDataSource>
+      <TableDataSource Name="Vacuna" DataType="System.Int32" Enabled="true" TableName="Vacuna">
+        <Column Name="IdVacuna" DataType="System.Int32"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+        <Column Name="costo" DataType="System.Decimal"/>
+      </TableDataSource>
+      <TableDataSource Name="Lotes" DataType="System.Int32" Enabled="true" TableName="Lotes">
+        <Column Name="IdLote" DataType="System.Int32"/>
+        <Column Name="FechaVencimiento" DataType="System.DateTime"/>
+        <Column Name="FechaFabricacion" DataType="System.DateTime"/>
+        <Column Name="CodigoLote" DataType="System.String"/>
+        <Column Name="IdInsumo" DataType="System.Int32"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Compra" DataType="System.Int32" Enabled="true" TableName="Compra">
+        <Column Name="IdCompra" DataType="System.Int32"/>
+        <Column Name="NroBoleta" DataType="System.String"/>
+        <Column Name="IdProveedor" DataType="System.Int32"/>
+        <Column Name="FechaCompra" DataType="System.DateTime"/>
+        <Column Name="TipoCompra" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+        <Column Name="Facturado" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="Proveedor" DataType="System.Int32" Enabled="true" TableName="Proveedor">
+        <Column Name="IdProveedor" DataType="System.Int32"/>
+        <Column Name="IdPersona" DataType="System.Int32"/>
+        <Column Name="Ruc" DataType="System.String"/>
+        <Column Name="Telefono" DataType="System.String"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Cliente" DataType="System.Int32" Enabled="true" TableName="Cliente">
+        <Column Name="IdCliente" DataType="System.Int32"/>
+        <Column Name="IdPersona" DataType="System.Int32"/>
+        <Column Name="RUC" DataType="System.String"/>
+        <Column Name="Telefono" DataType="System.String"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="Activo" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Impuesto" DataType="System.Int32" Enabled="true" TableName="Impuesto">
+        <Column Name="IdImpuesto" DataType="System.Int32"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Valor" DataType="System.Decimal"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="DeudaProveedor" DataType="System.Int32" Enabled="true" TableName="DeudaProveedor">
+        <Column Name="IdDeuda" DataType="System.Int32"/>
+        <Column Name="IdCompra" DataType="System.Int32"/>
+        <Column Name="FechaPago" DataType="System.DateTime"/>
+        <Column Name="MontoPagado" DataType="System.Decimal"/>
+        <Column Name="MetodoPago" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Presentacion" DataType="System.Int32" Enabled="true" TableName="Presentacion">
+        <Column Name="IdPresentacion" DataType="System.Int32"/>
+        <Column Name="IdUnidad" DataType="System.Int32"/>
+        <Column Name="cantidadPresentacion" DataType="System.Decimal"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Activo" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="TipoInsumo" DataType="System.Int32" Enabled="true" TableName="TipoInsumo">
+        <Column Name="IdTipoInsumo" DataType="System.Int32"/>
+        <Column Name="Descricion" DataType="System.String"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Insumo" DataType="System.Int32" Enabled="true" TableName="Insumo">
+        <Column Name="IdInsumo" DataType="System.Int32"/>
+        <Column Name="idTipoInsumo" DataType="System.Int32"/>
+        <Column Name="IdPresentacion" DataType="System.Int32"/>
+        <Column Name="IdImpuesto" DataType="System.Int32"/>
+        <Column Name="Codigo" DataType="System.String"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Activo" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Paciente" DataType="System.Int32" Enabled="true" TableName="Paciente">
+        <Column Name="IdPaciente" DataType="System.Int32"/>
+        <Column Name="IdCliente" DataType="System.Int32"/>
+        <Column Name="IdRaza" DataType="System.Int32"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="Edad" DataType="System.Decimal"/>
+        <Column Name="Sexo" DataType="System.String"/>
+        <Column Name="Peso" DataType="System.Decimal"/>
+        <Column Name="Activo" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Raza" DataType="System.Int32" Enabled="true" TableName="Raza">
+        <Column Name="IdRaza" DataType="System.Int32"/>
+        <Column Name="IdEspecie" DataType="System.Int32"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="Activo" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="UnidadMedida" DataType="System.Int32" Enabled="true" TableName="UnidadMedida">
+        <Column Name="IdUnidad" DataType="System.Int32"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Abreviatura" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Especie" DataType="System.Int32" Enabled="true" TableName="Especie">
+        <Column Name="IdEspecie" DataType="System.Int32"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="Activo" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="CompraDetalle" DataType="System.Int32" Enabled="true" TableName="CompraDetalle">
+        <Column Name="IdCompraDetalle" DataType="System.Int32"/>
+        <Column Name="IdCompra" DataType="System.Int32"/>
+        <Column Name="IdInsumo" DataType="System.Int32"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Precio" DataType="System.Decimal"/>
+        <Column Name="Cantidad" DataType="System.Decimal"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="StockInsumos" DataType="System.Int32" Enabled="true" TableName="StockInsumos">
+        <Column Name="IdStock" DataType="System.Int32"/>
+        <Column Name="IdInsumo" DataType="System.Int32"/>
+        <Column Name="IdLote" DataType="System.Int32"/>
+        <Column Name="CantidadActual" DataType="System.Decimal"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="sysdiagrams" DataType="System.Int32" Enabled="true" TableName="sysdiagrams">
+        <Column Name="name" DataType="System.String"/>
+        <Column Name="principal_id" DataType="System.Int32"/>
+        <Column Name="diagram_id" DataType="System.Int32"/>
+        <Column Name="version" DataType="System.Int32"/>
+        <Column Name="definition" DataType="System.Byte[]" BindableControl="Picture"/>
+      </TableDataSource>
+      <TableDataSource Name="Patologia" DataType="System.Int32" Enabled="true" TableName="Patologia">
+        <Column Name="IdPatologia" DataType="System.Int32"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Persona" DataType="System.Int32" Enabled="true" TableName="Persona">
+        <Column Name="IdPersona" DataType="System.Int32"/>
+        <Column Name="Nombre" DataType="System.String"/>
+        <Column Name="Apellido" DataType="System.String"/>
+        <Column Name="Cedula" DataType="System.String"/>
+        <Column Name="FechaNacimiento" DataType="System.DateTime"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="PagoVenta" DataType="System.Int32" Enabled="true" TableName="PagoVenta">
+        <Column Name="IdPago" DataType="System.Int32"/>
+        <Column Name="IdVenta" DataType="System.Int32"/>
+        <Column Name="FechaPago" DataType="System.DateTime"/>
+        <Column Name="MontoPagado" DataType="System.Decimal"/>
+        <Column Name="MetodoPago" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="HistorialMovimiento" DataType="System.Int32" Enabled="true" TableName="HistorialMovimiento">
+        <Column Name="IdHistorial" DataType="System.Int32"/>
+        <Column Name="Fecha" DataType="System.DateTime"/>
+        <Column Name="Cantidad" DataType="System.Decimal"/>
+        <Column Name="Precio" DataType="System.Decimal"/>
+        <Column Name="IdCompraDetalle" DataType="System.Int32"/>
+        <Column Name="IdVentaDetalle" DataType="System.Int32"/>
+        <Column Name="Ajuste" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+        <Column Name="Facturado" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="Modulo" DataType="System.Int32" Enabled="true" TableName="Modulo">
+        <Column Name="idModulo" DataType="System.Int32"/>
+        <Column Name="modulo" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="Permiso" DataType="System.Int32" Enabled="true" TableName="Permiso">
+        <Column Name="IdPermiso" DataType="System.Int32"/>
+        <Column Name="IdModulo" DataType="System.Int32"/>
+        <Column Name="IdRol" DataType="System.Int32"/>
+        <Column Name="Consultar" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="Agregar" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="Editar" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="Borrar" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="HistorialClinico" DataType="System.Int32" Enabled="true" TableName="HistorialClinico">
+        <Column Name="IdHistorial" DataType="System.Int32"/>
+        <Column Name="IdPaciente" DataType="System.Int32"/>
+        <Column Name="IdTratamiento" DataType="System.Int32"/>
+        <Column Name="IdPatologia" DataType="System.Int32"/>
+        <Column Name="IdVacuna" DataType="System.Int32"/>
+        <Column Name="IdProcedimiento" DataType="System.Int32"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Fecha" DataType="System.DateTime"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+        <Column Name="costo" DataType="System.Decimal"/>
+        <Column Name="Facturado" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="VentaDetalle" DataType="System.Int32" Enabled="true" TableName="VentaDetalle">
+        <Column Name="IdVentaDetalle" DataType="System.Int32"/>
+        <Column Name="IdVenta" DataType="System.Int32"/>
+        <Column Name="IdInsumo" DataType="System.Int32"/>
+        <Column Name="Cantidad" DataType="System.Decimal"/>
+        <Column Name="Precio" DataType="System.Decimal"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="borrado" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="fechaInsertado" DataType="System.DateTime"/>
+        <Column Name="fechaModificado" DataType="System.DateTime"/>
+        <Column Name="fechaBorrado" DataType="System.DateTime"/>
+        <Column Name="idUsuarioInserto" DataType="System.Int32"/>
+        <Column Name="idUsuarioModifico" DataType="System.Int32"/>
+        <Column Name="IdHistorial" DataType="System.Int32"/>
+      </TableDataSource>
+      <ProcedureDataSource Name="verificar_dependencia_registro" DataType="System.Int32" Enabled="true" TableName="verificar_dependencia_registro" SelectCommand="verificar_dependencia_registro">
+        <ProcedureParameter Name="@id" DataType="8" Direction="Input"/>
+        <ProcedureParameter Name="@tabla_nombre" DataType="12" Direction="Input"/>
+      </ProcedureDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="179.55" Top="9.45" Width="274.05" Height="18.9" Text="REPORTE DE CLIENTES" Font="Arial, 10pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41" Width="718.2" Height="47.25">
+      <TextObject Name="Text3" Width="94.5" Height="18.9" Text="IdPaciente" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text5" Left="132.3" Width="94.5" Height="18.9" Text="Nombre" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Left="245.7" Width="94.5" Height="18.9" Text="Edad" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="359.1" Width="94.5" Height="18.9" Text="Sexo" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="472.5" Width="94.5" Height="18.9" Text="Peso" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="91.45" Width="718.2" Height="75.6" DataSource="Paciente">
+      <TextObject Name="Text2" Top="9.45" Width="94.5" Height="18.9" Text="[Paciente.IdPaciente]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Left="132.3" Top="9.45" Width="94.5" Height="18.9" Text="[Paciente.Nombre]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Left="245.7" Top="9.45" Width="94.5" Height="18.9" Text="[Paciente.Edad]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text8" Left="359.1" Top="9.45" Width="94.5" Height="18.9" Text="[Paciente.Sexo]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text10" Left="472.5" Top="9.45" Width="94.5" Height="18.9" Text="[Paciente.Peso]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="170.25" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,17 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+ <app-persona [persona]="persona"></app-persona>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+        <ion-button (click)="editarGuardar()" expand="block">Aceptar</ion-button>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+        <ion-button (click)="cancelar()" expand="block" color="danger">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,143 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>5f414d15-1756-477b-a779-7b5aaccd287e</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app.constants.ts" />
+    <None Remove="ClientApp\src\app\helpers\error.interceptor.ts" />
+    <None Remove="ClientApp\src\app\helpers\jwt.interceptor.ts" />
+    <None Remove="ClientApp\src\app\models\Cliente.ts" />
+    <None Remove="ClientApp\src\app\models\Compra.ts" />
+    <None Remove="ClientApp\src\app\models\CompraDetalle.ts" />
+    <None Remove="ClientApp\src\app\models\DeudaProveedor.ts" />
+    <None Remove="ClientApp\src\app\models\Especie.ts" />
+    <None Remove="ClientApp\src\app\models\Historial.ts" />
+    <None Remove="ClientApp\src\app\models\Impuesto.ts" />
+    <None Remove="ClientApp\src\app\models\Insumo.ts" />
+    <None Remove="ClientApp\src\app\models\Modulo.ts" />
+    <None Remove="ClientApp\src\app\models\Paciente.ts" />
+    <None Remove="ClientApp\src\app\models\PagoVenta.ts" />
+    <None Remove="ClientApp\src\app\models\Patologia.ts" />
+    <None Remove="ClientApp\src\app\models\Permiso.ts" />
+    <None Remove="ClientApp\src\app\models\Persona.ts" />
+    <None Remove="ClientApp\src\app\models\Presentacion.ts" />
+    <None Remove="ClientApp\src\app\models\Procedimiento.ts" />
+    <None Remove="ClientApp\src\app\models\Proveedor.ts" />
+    <None Remove="ClientApp\src\app\models\Raza.ts" />
+    <None Remove="ClientApp\src\app\models\Rol.ts" />
+    <None Remove="ClientApp\src\app\models\StockInsumo.ts" />
+    <None Remove="ClientApp\src\app\models\TipoInsumo.ts" />
+    <None Remove="ClientApp\src\app\models\Tratamiento.ts" />
+    <None Remove="ClientApp\src\app\models\UnidadMedida.ts" />
+    <None Remove="ClientApp\src\app\models\Usuario.ts" />
+    <None Remove="ClientApp\src\app\models\Vacuna.ts" />
+    <None Remove="ClientApp\src\app\models\Venta.ts" />
+    <None Remove="ClientApp\src\app\models\VentaDetalle.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+    <PackageReference Include="FastReport.Data.MsSql" Version="2024.1.0" />
+    <PackageReference Include="FastReport.Net.Demo" Version="2024.1.2" />
+    <PackageReference Include="FastReport.OpenSource.Web" Version="2024.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.22.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app.constants.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\helpers\error.interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\helpers\jwt.interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\PagoVenta.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\DeudaProveedor.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\StockInsumo.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\VentaDetalle.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Venta.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Historial.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Procedimiento.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\CompraDetalle.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Compra.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Proveedor.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Paciente.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Persona.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Cliente.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Vacuna.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Tratamiento.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Patologia.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Insumo.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Modulo.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\UnidadMedida.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\TipoInsumo.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Raza.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Presentacion.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Impuesto.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Especie.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Permiso.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Rol.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="ClientApp\src\app\models\Usuario.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Reportes\" />
+  </ItemGroup>
+
+</Project>

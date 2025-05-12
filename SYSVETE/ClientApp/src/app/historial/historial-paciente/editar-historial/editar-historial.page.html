@@ -1,0 +1,69 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="form" (ngSubmit)="editarGuardar()">
+      <ion-row>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Tratamiento</ion-label>
+            <ion-select formControlName="idTratamiento" interface="popover">
+              <ion-select-option *ngFor="let item of tratamientos" [value]="item.idTratamiento">{{item.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Procedimiento</ion-label>
+            <ion-select formControlName="idProcedimiento" interface="popover">
+              <ion-select-option *ngFor="let item of procedimientos" [value]="item.idProcedimiento">{{item.descripcion}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Patologia</ion-label>
+            <ion-select formControlName="idPatologia" interface="popover">
+              <ion-select-option *ngFor="let item of patologias" [value]="item.idPatologia">{{item.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Vacuna</ion-label>
+            <ion-select formControlName="idVacuna" interface="popover">
+              <ion-select-option *ngFor="let item of vacunas" [value]="item.idVacuna">{{item.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label>Fecha</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime formControlName="fecha" id="datetime" presentation="date" [preferWheel]="true"></ion-datetime>
+              </ng-template>
+            </ion-modal>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Descripcion</ion-label>
+            <ion-textarea formControlName="descripcion"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+          <ion-button type="submit" expand="block">Aceptar</ion-button>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+          <ion-button (click)="irAtras()" expand="block" color="danger">Cancelar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

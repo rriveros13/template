@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/22/2023 18:52:01" ReportInfo.Modified="12/23/2023 15:06:01" ReportInfo.CreatorVersion="2024.1.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqJUrEa/KIcQqhhcfnlqC6PGg5imbaGg6zUaNTAYc5sc03TfePxSblja2w5ZBQ6XB2/+Rp10RZJ4YOvaZ8zHB1yr9oNvnasceregYGMryaakB1PBBrh/XhqCXcw9w8IJ9n+2hZqg1J77uCLmAIlJFKw+eF7PMM/WzsNbcOetuIcY7FL+vm3pP0q5lw+bT3kMHI8gzunE26ONSE2hsW0a4MeA==">
+      <ProcedureDataSource Name="ServiciosRealizados" DataType="System.Int32" Enabled="true" TableName="ServiciosRealizados" SelectCommand="ServiciosRealizados">
+        <Column Name="Anio" DataType="System.Int32"/>
+        <Column Name="Mes" DataType="System.Int32"/>
+        <Column Name="CantidadTratamientos" DataType="System.Int32"/>
+        <Column Name="CantidadVacunas" DataType="System.Int32"/>
+        <Column Name="CantidadProcedimientos" DataType="System.Int32"/>
+        <ProcedureParameter Name="@FechaFin" DataType="31" Expression="[FechaFin]" Direction="Input"/>
+        <ProcedureParameter Name="@FechaInicio" DataType="31" Expression="[FechaInicio]" Direction="Input"/>
+      </ProcedureDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="FechaInicio" DataType="System.String" Expression="&quot;1/1/2023&quot;"/>
+    <Parameter Name="FechaFin" DataType="System.String" Expression="&quot;31/12/2023&quot;"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="47.25">
+      <TextObject Name="Text1" Top="9.45" Width="718.2" Height="28.35" Text="Reporte de servicios realizados" HorzAlign="Center" VertAlign="Center" Font="Arial, 18pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="51.46" Width="718.2" Height="56.7">
+      <TextObject Name="Text3" Left="37.8" Top="9.45" Width="94.5" Height="37.8" Text="Mes" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="170.1" Top="9.45" Width="94.5" Height="37.8" Text="Año" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="321.3" Top="9.45" Width="94.5" Height="37.8" Text="Tratamientos" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="434.7" Top="9.45" Width="94.5" Height="37.8" Text="Vacunas" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text11" Left="557.55" Top="9.45" Width="113.4" Height="37.8" Text="Procedimientos" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="112.37" Width="718.2" Height="28.35" DataSource="ServiciosRealizados">
+      <TextObject Name="Text2" Left="37.8" Width="94.5" Height="18.9" Text="[ServiciosRealizados.Mes]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="170.1" Width="94.5" Height="18.9" Text="[ServiciosRealizados.Anio]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="321.3" Width="94.5" Height="18.9" Text="[ServiciosRealizados.CantidadTratamientos]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="434.7" Width="94.5" Height="18.9" Text="[ServiciosRealizados.CantidadVacunas]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="557.55" Width="113.4" Height="18.9" Text="[ServiciosRealizados.CantidadProcedimientos]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="144.93" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

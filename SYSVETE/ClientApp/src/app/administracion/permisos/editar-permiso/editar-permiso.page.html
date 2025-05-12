@@ -1,0 +1,58 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="editarGuardar()">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label position="floating">Rol</ion-label>
+          <ion-select formControlName="idRol" okText="Aceptar" cancelText="Cancelar">
+            <ion-select-option *ngFor="let rol of roles" [value]="rol.idRol">{{rol.descripcion}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label position="floating">Modulo</ion-label>
+          <ion-select formControlName="idModulo" okText="Aceptar" cancelText="Cancelar">
+            <ion-select-option *ngFor="let modulo of modulos" [value]="modulo.idModulo">{{modulo.nombre}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label>Consultar</ion-label>
+          <ion-checkbox formControlName="consultar"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label>Agregar</ion-label>
+          <ion-checkbox formControlName="agregar"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label>Editar</ion-label>
+          <ion-checkbox formControlName="editar"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label>Borrar</ion-label>
+          <ion-checkbox formControlName="borrar"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+        <ion-button type="submit" expand="block">{{edicion ? 'Editar' : 'Nuevo'}}</ion-button>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+        <ion-button (click)="cancelar()" expand="block" color="danger">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

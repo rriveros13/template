@@ -1,0 +1,40 @@
+<ion-grid>
+  <form [formGroup]="formDetalle" (ngSubmit)="editar()">
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="12" size-lg="4">
+        <ion-item>
+          <ion-label position="floating">Insumo</ion-label>
+          <ion-select formControlName="idInsumo" cancelText="Cancelar" interface="popover">
+            <ion-select-option *ngFor="let item of insumos" [value]="item.idInsumo">{{item.descripcion}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="4">
+        <ion-item>
+          <ion-label position="floating">Precio unitario</ion-label>
+          <ion-input formControlName="precio" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="4">
+        <ion-item>
+          <ion-label position="floating">Cantidad</ion-label>
+          <ion-input formControlName="cantidad" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label position="floating">Descripcion</ion-label>
+          <ion-textarea formControlName="descripcion"></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+        <ion-button type="submit" expand="block">Aceptar</ion-button>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+        <ion-button (click)="cancelar()" color="danger" expand="block">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-grid>

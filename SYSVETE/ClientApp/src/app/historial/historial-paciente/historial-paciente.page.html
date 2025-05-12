@@ -1,0 +1,54 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label>Desde</ion-label>
+          <ion-datetime-button datetime="desde"></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime (ionChange)="filtroDesde($event)" id="desde" presentation="date" [preferWheel]="true"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label>Hasta</ion-label>
+          <ion-datetime-button datetime="hasta"></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime (ionChange)="filtroHasta($event)" id="hasta" presentation="date" [preferWheel]="true"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-item>
+      </ion-col>
+      <ion-col size="12">
+        <ion-list>
+          <ion-item *ngFor="let his of filtroHis">
+            <ion-button routerLink="./editar-historial/{{his.idPaciente}}" slot="start" fill="clear">
+              <ion-icon slot="icon-only" name="caret-forward-circle-outline"></ion-icon>
+            </ion-button>
+            <ion-label>
+              <h3>Fecha: {{his.fecha | date : 'dd/MM/yyyy'}}</h3>
+              <p *ngIf="his.idPatologiaNavigation">Patologia: {{his.idPatologiaNavigation.nombre}}</p>
+              <p *ngIf="his.idTratamientoNavigation">Tratamiento: {{his.idTratamientoNavigation.nombre}}</p>
+              <p *ngIf="his.idProcedimientoNavigation">Procedimiento: {{his.idProcedimientoNavigation.descripcion}}</p>
+              <p *ngIf="his.idVacunaNavigation">Vacuna: {{his.idVacunaNavigation.nombre}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button routerLink="./editar-historial/0">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

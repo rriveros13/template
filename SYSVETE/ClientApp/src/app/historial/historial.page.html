@@ -1,0 +1,18 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Buscar..." (ionChange)="filtrar($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let paciente of filtroPacientes">
+      <ion-button routerLink="./historial-paciente/{{paciente.idPaciente}}" slot="start" fill="clear">
+        <ion-icon slot="icon-only" name="caret-forward-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-label>
+        <h3>{{paciente.nombre}}</h3>
+        <p>Cliente: {{paciente.idClienteNavigation.idPersonaNavigation.nombre}} {{paciente.idClienteNavigation.idPersonaNavigation.apellido}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

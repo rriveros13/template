@@ -1,0 +1,12 @@
+<ion-item>
+  <ion-label>Persona</ion-label>
+  <ion-select cancelText="Cancelar"
+              placeholder="Seleccione una persona"
+              (ionChange)="seleccionarPersona($event)"
+              [value]="selectedPersona">
+    <ion-select-option [value]="item.idPersona" *ngFor="let item of personas">{{item.cedula}} - {{item.nombre}} {{item.apellido}}</ion-select-option>
+  </ion-select>
+  <ion-button slot="end" fill="clear" (click)="modalPersona()">
+    <ion-icon name="add" slot="icon-only"></ion-icon>
+  </ion-button>
+</ion-item>

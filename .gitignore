@@ -1,0 +1,17 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/SYSVETEData/obj
+/.vs
+/SYSVETE/obj
+/SYSVETEPostgresql/obj
+/SYSVETE/bin/Debug/netcoreapp3.1
+/SYSVETEData/bin/Debug/netcoreapp3.1
+/SYSVETEPostgresql/bin/Debug/netcoreapp3.1
+/SYSVETE/ClientApp/dist/out-tsc
+/SYSVETE/ClientApp/node_modules
+/.vscode
+/SYSVETE/bin/Debug/net6.0
+/SYSVETE/bin/Debug/net6.0-windows10.0.22621.0
+/SYSVETE/bin/Debug/net6.0-windows7.0

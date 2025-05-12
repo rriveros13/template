@@ -1,0 +1,23 @@
+
+.table-container {
+  margin: 20px;
+  overflow-x: auto; /* Agregamos un scroll horizontal al contenedor */
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-table th, .responsive-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.responsive-table th.numeric,
+.responsive-table td.numeric {
+  text-align: right;
+}

@@ -1,0 +1,21 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button routerLink="./editar/0">+ Nuevo Rol</ion-button>
+  <ion-list>
+    <ion-item *ngFor="let rol of rolesSistema">
+      <ion-button routerLink="./editar/{{rol.idRol}}" slot="start" fill="clear">
+        <ion-icon slot="icon-only" name="build-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="confirmarBorrar(rol)" slot="start" fill="clear" color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+      <ion-label>
+        <p>{{rol.descripcion}}</p>
+        <p>Codigo:{{rol.codigo}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

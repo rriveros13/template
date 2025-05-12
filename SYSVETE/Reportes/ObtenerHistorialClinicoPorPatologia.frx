@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/23/2023 16:35:48" ReportInfo.Modified="12/23/2023 17:16:37" ReportInfo.CreatorVersion="2024.1.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqJUrEa/KIcQqhhcfnlqC6PGg5imbaGg6zUaNTAYc5sc03TfePxSblja2w5ZBQ6XB2/+Rp10RZJ4YOvaZ8zHB1yr9oNvnasceregYGMryaakB1PBBrh/XhqCXcw9w8IJ9n+2hZqg1J77uCLmAIlJFKw+eF7PMM/WzsNbcOetuIcY7FL+vm3pP0q5lw+bT3kMHI9nF1W5y9oS2sDxtuXSVO5g==">
+      <ProcedureDataSource Name="ObtenerHistorialClinicoPorPatologia" DataType="System.Int32" Enabled="true" TableName="ObtenerHistorialClinicoPorPatologia" SelectCommand="ObtenerHistorialClinicoPorPatologia">
+        <Column Name="IdPatologia" DataType="System.Int32"/>
+        <Column Name="IdHistorial" DataType="System.Int32"/>
+        <Column Name="IdPaciente" DataType="System.Int32"/>
+        <Column Name="Fecha" DataType="System.DateTime"/>
+        <Column Name="Descripcion" DataType="System.String"/>
+        <Column Name="Patologia" DataType="System.String"/>
+        <Column Name="Paciente" DataType="System.String"/>
+        <ProcedureParameter Name="@IdPatologia" DataType="8" Expression="[IdPatologia]" Direction="Input"/>
+      </ProcedureDataSource>
+    </MsSqlDataConnection>
+    <Parameter Name="IdPatologia" DataType="System.Int32" Expression="1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Top="9.45" Width="718.2" Height="28.35" Text="Historial Clinico por Patologia" HorzAlign="Center" VertAlign="Center" Font="Arial, 16pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="42.01" Width="718.2" Height="75.6">
+      <TextObject Name="Text3" Left="9.45" Top="56.7" Width="94.5" Height="18.9" Text="Fecha" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="198.45" Top="56.7" Width="132.3" Height="18.9" Text="Paciente" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text7" Left="368.55" Top="56.7" Width="255.15" Height="18.9" Text="Descripcion" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="9.45" Top="9.45" Width="94.5" Height="18.9" Text="Patologia:" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text9" Left="113.4" Top="9.45" Width="179.55" Height="18.9" Text="[ObtenerHistorialClinicoPorPatologia.Patologia]" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="121.82" Width="718.2" Height="28.35" DataSource="ObtenerHistorialClinicoPorPatologia">
+      <TextObject Name="Text2" Left="9.45" Width="94.5" Height="18.9" Text="[ObtenerHistorialClinicoPorPatologia.Fecha]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="198.45" Width="132.3" Height="18.9" Text="[ObtenerHistorialClinicoPorPatologia.Paciente]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="368.55" Width="255.15" Height="18.9" Text="[ObtenerHistorialClinicoPorPatologia.Descripcion]" VertAlign="Center" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="154.38" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

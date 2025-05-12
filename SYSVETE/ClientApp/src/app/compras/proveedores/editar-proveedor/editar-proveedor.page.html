@@ -1,0 +1,42 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <form [formGroup]="form" (ngSubmit)="editarGuardar()">
+      <ion-row>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <app-selector-persona [selectedPersona]="selectedPersona" (evSeleccion)="seleccionPersona($event)"></app-selector-persona>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">RUC</ion-label>
+            <ion-input formControlName="ruc" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input formControlName="telefono" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+          <ion-button type="submit" expand="block">Aceptar</ion-button>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="4" size-md="4" size-lg="3">
+          <ion-button (click)="irAtras()" expand="block" color="danger">Cancelar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

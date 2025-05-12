@@ -1,0 +1,76 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Estados</ion-label>
+          <ion-select #estadosSelect (ionChange)="filtrarPorEstado($event)" cancelText="Cancelar">
+            <ion-select-option value="-1">Todas</ion-select-option>
+            <ion-select-option value="1">Pendientes</ion-select-option>
+            <ion-select-option value="2">Pagadas</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label>Desde</ion-label>
+          <ion-datetime-button datetime="desde"></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime (ionChange)="filtroDesde($event)" id="desde" presentation="date" [preferWheel]="true"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-item>
+      </ion-col>
+      <ion-col size-xs="12" size-sm="12" size-md="6" size-lg="6">
+        <ion-item>
+          <ion-label>Hasta</ion-label>
+          <ion-datetime-button datetime="hasta"></ion-datetime-button>
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime (ionChange)="filtroHasta($event)" id="hasta" presentation="date" [preferWheel]="true"></ion-datetime>
+            </ng-template>
+          </ion-modal>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let item of filtroCompra">
+            <ion-button routerLink="./editar-compra/{{item.idCompra}}" slot="start" fill="clear">
+              <ion-icon slot="icon-only" name="build-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="confirmarEliminar(item)" slot="start" fill="clear" color="danger">
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="pagarDeuda(item)" slot="start" fill="clear" color="success">
+              <ion-icon slot="icon-only" name="cash-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="verPagos(item)" slot="start" fill="clear" color="success">
+              <ion-icon slot="icon-only" name="book-outline"></ion-icon>
+            </ion-button>
+            <ion-label>
+              <h3>{{item.idCompra}}</h3>
+              <p>Nro: {{item.nroBoleta}}</p>
+              <p>Fecha: {{item.fechaCompra | date:'dd/MM/yyyy'}}</p>
+              <p>Proveedor: {{item.proveedorDto.persona.nombre}} {{item.proveedorDto.persona.apellido}}</p>
+              <p>Estado: {{item.facturado ? 'Pagado' : 'Pendiente'}}</p>
+              <p>Tipo: {{item.tipoCompra}}</p>
+              <p>Finalizado: {{item.finalizado ? 'SI' : 'NO'}}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button routerLink="./editar-compra/0">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

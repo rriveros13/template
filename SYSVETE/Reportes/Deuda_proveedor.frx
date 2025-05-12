@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/22/2023 21:57:01" ReportInfo.Modified="12/22/2023 22:59:03" ReportInfo.CreatorVersion="2024.1.0.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlqJUrEa/KIcQqhhcfnlqC6PGg5imbaGg6zUaNTAYc5sc03TfePxSblja2w5ZBQ6XB2/+Rp10RZJ4YOvaZ8zHB1yr9oNvnasceregYGMryaakB1PBBrh/XhqCXcw9w8IJ9n+2hZqg1J77uCLmAIlJFKw+eF7PMM/WzsNbcOetuIcY7FL+vm3pP0q5lw+bT3kMHI+jvkdop/Yoq0Y54kxHgr/A==">
+      <ProcedureDataSource Name="obtenerDeudaAProveedores" DataType="System.Int32" Enabled="true" TableName="obtenerDeudaAProveedores" SelectCommand="obtenerDeudaAProveedores">
+        <Column Name="IdCompra" DataType="System.Int32"/>
+        <Column Name="NroBoleta" DataType="System.String"/>
+        <Column Name="FechaCompra" DataType="System.DateTime"/>
+        <Column Name="Proveedor" DataType="System.String"/>
+        <Column Name="MontoTotal" DataType="System.Decimal"/>
+        <Column Name="Pagado" DataType="System.Decimal"/>
+        <Column Name="Saldo" DataType="System.Decimal"/>
+      </ProcedureDataSource>
+    </MsSqlDataConnection>
+    <Total Name="Total" Expression="[obtenerDeudaAProveedores.Saldo]" Evaluator="Data1" PrintOn="PageFooter1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Text="Deuda a proveedores" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="42.01" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Width="113.4" Height="18.9" Text="Nro Boleta" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text5" Left="122.85" Width="75.6" Height="18.9" Text="Fecha" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text7" Left="217.35" Width="151.2" Height="18.9" Text="Proveedor" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="387.45" Width="103.95" Height="18.9" Text="Monto" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text11" Left="500.85" Width="94.5" Height="18.9" Text="Pagado" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text13" Left="604.8" Width="94.5" Height="18.9" Text="Saldo" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.57" Width="718.2" Height="18.9" DataSource="obtenerDeudaAProveedores">
+      <TextObject Name="Text2" Width="113.4" Height="18.9" CanGrow="true" Text="[obtenerDeudaAProveedores.NroBoleta]" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text4" Left="122.85" Width="75.6" Height="18.9" Text="[obtenerDeudaAProveedores.FechaCompra]" Format="Date" Format.Format="d" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text6" Left="217.35" Width="151.2" Height="18.9" Text="[obtenerDeudaAProveedores.Proveedor]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+      <TextObject Name="Text9" Left="387.45" Width="103.95" Height="18.9" Text="[obtenerDeudaAProveedores.MontoTotal]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text10" Left="500.85" Width="94.5" Height="18.9" Text="[obtenerDeudaAProveedores.Pagado]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text12" Left="604.8" Width="94.5" Height="18.9" Text="[obtenerDeudaAProveedores.Saldo]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 8pt" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="97.68" Width="718.2" Height="28.35">
+      <TextObject Name="Text14" Left="548.1" Width="151.2" Height="18.9" Text="[Total]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text15" Left="444.15" Width="94.5" Height="18.9" Text="Total saldo:" HorzAlign="Right" Font="Arial, 8pt, style=Bold"/>
+    </ColumnFooterBand>
+    <PageFooterBand Name="PageFooter1" Top="130.24" Width="718.2" Height="28.35"/>
+  </ReportPage>
+</Report>

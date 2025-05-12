@@ -1,0 +1,25 @@
+<ion-header>
+  <app-toolbar [titulo]="tituloToolbar"></app-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Buscar ..."></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let vacuna of itemsFiltro | busqueda: termino: filtroProp">
+      <ion-button routerLink="./editar-vacuna/{{vacuna.idVacuna}}" slot="start" fill="clear">
+        <ion-icon slot="icon-only" name="build-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="confirmarEliminar(vacuna)" slot="start" fill="clear" color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+      <ion-label>
+        <h3>{{vacuna.nombre}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button routerLink="./editar-vacuna/0">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
